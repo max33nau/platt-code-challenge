@@ -3,12 +3,14 @@
     <content-product-options> </content-product-options>
     <img class="content-box-shadow content-panel todays-deal-img" src="../assets/img/todays-deal.png" alt="Todays Deal"/>
     <content-plus-member class="content-box-shadow content-panel"> </content-plus-member>
+    <content-recently-viewed class="content-box-shadow content-panel"> </content-recently-viewed>
   </div>
 </template>
 
 <script>
   import ContentProductOptions from './content-product-options'
-  import ContentPlusMember from './content-plus-member.vue'
+  import ContentPlusMember from './content-plus-member'
+  import ContentRecentlyViewed from './content-recently-viewed'
 
   export default {
     name: 'app-content',
@@ -17,7 +19,8 @@
     },
     components: {
       'content-product-options': ContentProductOptions,
-      'content-plus-member': ContentPlusMember
+      'content-plus-member': ContentPlusMember,
+      'content-recently-viewed': ContentRecentlyViewed
     }
   }
 </script>
@@ -40,6 +43,7 @@
 
   .content-panel {
     margin-bottom: 15px;
+    background-color: $content-panel-bg;
   }
 
   .todays-deal-img {

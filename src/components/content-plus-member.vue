@@ -9,10 +9,7 @@
 
 <script>
   export default {
-    name: 'content-plus-member',
-    data: function () {
-      return {}
-    }
+    name: 'content-plus-member'
   }
 </script>
 
@@ -20,7 +17,6 @@
   @import '../assets/scss/colors.scss';
 
   .content-plus-member {
-    background-color: $content-panel-bg;
     text-align: center;
     padding: 30px 10px 40px;
   }
@@ -30,7 +26,7 @@
   }
 
   .highlight-text {
-    color: $content-panel-highlight-txt
+    color: $content-panel-highlight-txt;
   }
 
   .plus-member-details {
@@ -41,12 +37,13 @@
   .learn-more-btn {
     background-color: $light-grey;
     border-radius: 25px;
-    padding: 12px 40px;
+    padding: 12px 10px;
     border: none;
     outline: none;
     max-width: 200px;
     font-size: 14px;
     width: 100%;
+    cursor: pointer;
   }
 
 </style>
