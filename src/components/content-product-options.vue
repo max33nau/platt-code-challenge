@@ -73,6 +73,7 @@
       border: 1px solid #ccc;
       display: flex;
       justify-content: center;
+      outline: none;
       align-items: center;
       -webkit-box-shadow: $border-shadow;
       -moz-box-shadow: $border-shadow;
