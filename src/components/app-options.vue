@@ -1,28 +1,11 @@
 <template>
   <div class="options-container">
-    <div class="all-categories-container"> 
-      <div class="option-details-container">
-        <div class="option-icon-container"> 
-          <img class="option-icon"
-            :src="allCategories.icon"
-            alt=""
-          />
-        </div>
-        <span class="option-text all-categories-text">
-          {{allCategories.text}}
-        </span>        
-      </div>
-      <div class="arrow-container">
-        <img class="arrow-icon"
-          src="../assets/img/icons/black/ic_arrow_forward.png"
-          alt="Click Here"
-        />         
-      </div>
-    </div>
     <ul class="options-list">
       <li 
         v-for="option in options" 
         :key="option.id" 
+        :class="option.itemClass ? option.itemClass : 'list-item'"
+        @click="option.onClick"
       > 
         <div class="option-details-container">
           <div class="option-icon-container"> 
@@ -59,44 +42,46 @@
     name: 'app-options',
     data: function () {
       return {
-        allCategories: {
-          text: 'Shop all categories',
-          icon: categoryIcon,
-          onClick: () => alert('Shop all categories')
-        },
         options: [
           {
             id: 1,
+            text: 'Shop all categories',
+            icon: categoryIcon,
+            onClick: () => alert('Shop all categories'),
+            itemClass: 'all-categories-item'
+          },
+          {
+            id: 2,
             text: 'My Catalog',
             icon: catalogIcon,
             onClick: () => alert('My Catalog')
           },
           {
-            id: 2,
+            id: 3,
             text: 'My List',
             icon: listIcon,
             onClick: () => alert('My List')
           },
           {
-            id: 3,
+            id: 4,
             text: 'Live Help',
             icon: helpIcon,
             onClick: () => alert('Live Help')
           },
           {
-            id: 4,
+            id: 5,
             text: 'PIM',
             icon: pimIcon,
             onClick: () => alert('PIM')
           },
           {
-            id: 5,
+            id: 6,
             text: 'Account',
             icon: personIcon,
             onClick: () => alert('Account')
           },
           {
-            id: 6,
+            id: 7,
             text: 'Branch Locations',
             icon: branchIcon,
             onClick: () => alert('Branch Locations')
@@ -115,16 +100,6 @@
     $padding-option-horizontal: 20px;
     $margin-option-horizontal: 10px;
 
-    .all-categories-container {
-      padding: 20px $padding-option-horizontal + $margin-option-horizontal;
-      font-size: 16px;
-      white-space: nowrap;
-
-      .all-categories-text {
-        font-weight: bold;
-      }
-    }
-
     .option-details-container {
       max-width: 90%;
       width: 100%;
@@ -134,14 +109,27 @@
     .options-list {
       list-style-type: none;
       margin: 0;
-      padding: 0;
+      padding: 0 0 10px 0px;
 
-      li {
+      .list-item {
         white-space: nowrap;
         padding: 10px $padding-option-horizontal;
         font-size: 14px;
         border-top: 1px solid #ccc;
         margin: 0 $margin-option-horizontal;
+        cursor: pointer;
+      }
+
+    }
+
+    .all-categories-item {
+      padding: 20px $padding-option-horizontal + $margin-option-horizontal;
+      font-size: 16px;
+      white-space: nowrap;
+      cursor: pointer;
+
+      .option-text {
+        font-weight: bold;
       }
     }
 
@@ -172,10 +160,5 @@
         vertical-align: middle;
       }
     }
-
-
-
   }
-
-
 </style>
