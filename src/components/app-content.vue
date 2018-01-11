@@ -1,7 +1,9 @@
 <template>
   <div class="app-content">
-    <content-product-options> </content-product-options>
-    <img class="content-box-shadow content-panel todays-deal-img" src="../assets/img/todays-deal.png" alt="Todays Deal"/>
+    <content-product-options class="hide-not-mobile"> </content-product-options>
+    <div class="text-center hide-not-mobile">
+      <img class="content-box-shadow content-panel todays-deal-img" src="../assets/img/todays-deal.png" alt="Todays Deal"/>
+    </div>
     <content-plus-member class="content-box-shadow content-panel"> </content-plus-member>
     <content-recently-viewed class="content-box-shadow content-panel"> </content-recently-viewed>
     <div class="content-info-container">
@@ -95,6 +97,12 @@
     width: 100%;
     flex-wrap: wrap;
   }
+
+    @media screen and (min-width: $mobile-conatiner) {
+      .app-content {
+        padding: 0 15px;
+      }
+    } 
 
 
 </style>

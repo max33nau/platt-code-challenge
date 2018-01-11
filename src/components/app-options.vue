@@ -11,14 +11,20 @@
           <div class="option-icon-container"> 
             <img class="option-icon"
               :src="option.icon"
+              :class="option.tabletIcon ? 'hide-not-mobile' : ''"
               alt="" 
-            />            
+            />
+            <img class="option-icon hide-on-mobile"
+              v-if="option.tabletIcon"
+              :src="option.tabletIcon"
+              alt="" 
+            />             
           </div>
           <span class="option-text">
             {{option.text}}
           </span>
         </div>
-        <div class="arrow-container">
+        <div class="arrow-container hide-not-mobile">
           <img class="arrow-icon"
             src="../assets/img/icons/black/ic_arrow_forward.png"
             alt="Click Here"
@@ -34,6 +40,7 @@
   import catalogIcon from '../assets/img/icons/black/ic_playlist_add_check.png'
   import listIcon from '../assets/img/icons/black/ic_list.png'
   import helpIcon from '../assets/img/icons/green/ic_chat - active.png'
+  import helpTabletIcon from '../assets/img/icons/black/ic_chat.png'
   import pimIcon from '../assets/img/icons/black/ic_check_circle.png'
   import personIcon from '../assets/img/icons/black/ic_person.png'
   import branchIcon from '../assets/img/icons/black/ic_place.png'
@@ -66,6 +73,7 @@
             id: 4,
             text: 'Live Help',
             icon: helpIcon,
+            tabletIcon: helpTabletIcon,
             onClick: () => alert('Live Help')
           },
           {
@@ -160,5 +168,34 @@
         vertical-align: middle;
       }
     }
+
+    @media screen and (min-width: $mobile-conatiner) {
+      .option-details-container {
+        max-width: 100%;
+      }
+
+      .options-list {
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 0;
+
+        .list-item {
+          margin: 0;
+          width: 33.3333333%;
+          border: 1px solid #ccc;
+        }
+      }
+
+      .all-categories-item {
+        text-align: center;
+        padding: 15px;
+        width: 100%;
+        border: none;
+      }
+    } 
   }
+
+
 </style>

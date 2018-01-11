@@ -23,6 +23,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import '../assets/scss/layout.scss';
 
   .search-box-container {
     padding: 20px 12px;
@@ -65,8 +66,6 @@ export default {
       }     
     }
 
-
-    
     .search-icon-container {
       width: 10%;
       float: right;
@@ -78,6 +77,13 @@ export default {
         margin-top: $search-box-padding;
       }
     }
+
   }
+
+  @media screen and (min-width: $mobile-conatiner) {
+    .search-box-container {
+      padding: 10px 3px 5px;
+    }
+  } 
 
 </style>

@@ -1,20 +1,24 @@
 <template>
   <footer class="footer">
-    <h4 class="header"> Support Center </h4>
-    <h4 class="header header-with-sub"> 800-25-Platt </h4>
-    <h5 class="sub-header"> 800-257-5288 </h5>
-    <h4 class="header header-with-sub footer-dark-txt"> 4 a.m. - 12 a.m. (pst) </h4>
-    <h4 class="header footer-dark-txt"> 7 Days a week </h4>
-    <button class="btn-basic live-help-btn">  
-      <img src="../assets/img/icons/black/ic_comment.png" />
-      <span> Live Help </span>
-    </button>
+    <div class="footer-content">
+      <h4 class="header"> Support Center </h4>
+      <h4 class="header header-with-sub"> 800-25-Platt </h4>
+      <h5 class="sub-header"> 800-257-5288 </h5>
+      <h4 class="header header-with-sub footer-dark-txt"> 4 a.m. - 12 a.m. (pst) </h4>
+      <h4 class="header footer-dark-txt"> 7 Days a week </h4>
+      <button class="btn-basic live-help-btn">  
+        <img src="../assets/img/icons/black/ic_comment.png" />
+        <span> Live Help </span>
+      </button>     
+    </div>
+
     <ul class="footer-options">
       <li> Contact Us </li>
       <li> What's New </li>
       <li> FAQ's </li>
     </ul>
   </footer>
+  
 </template>
 
 <script>
@@ -30,8 +34,12 @@
   .footer {
     background-color: $dark-grey;
     color: $footer-txt;
-    padding: 30px 15px;
-    text-align: center;
+
+    .footer-content {
+      padding: 30px 15px;
+      text-align: center;
+    }
+
 
     .footer-dark-txt {
       color: $footer-darg-txt;
