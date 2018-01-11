@@ -15,6 +15,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../assets/scss/layout.scss';
 
   .content-apps {
     width: 100%;
@@ -40,6 +41,12 @@
       text-align: center;
     }
 
+    @media screen and (min-width: $mobile-conatiner) {
+      .apps-text {
+        margin: 15px 0;
+      }
+    }
+  
  
   }
 

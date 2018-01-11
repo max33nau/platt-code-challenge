@@ -1,9 +1,11 @@
 <template>
   <div class="content-plus-member">
     <img src="../assets/img/platt-plus.png" alt="Plus Members Image" />
-    <h3 class="text-center remove-bottom-margin"> Get Started Today </h3>
-    <h4 class="text-center plus-member-details"> Become a <span class="highlight-text"> Platt Plus </span> Member. </h4>
-    <button class="btn-basic learn-more-btn"> Learn More </button>
+    <div class="plus-member-details-container">
+      <h3 class="text-center remove-bottom-margin"> Get Started Today </h3>
+      <h4 class="text-center plus-member-details"> Become a <span class="highlight-text"> Platt Plus </span> Member. </h4>
+      <button class="btn-basic learn-more-btn"> Learn More </button>
+    </div>
   </div>
 </template>
 
@@ -14,6 +16,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../assets/scss/layout.scss';
   @import '../assets/scss/colors.scss';
 
   .content-plus-member {
@@ -38,6 +41,33 @@
     background-color: $light-grey;
     max-width: 200px;
     font-size: 14px;
+  }
+
+  @media screen and (min-width: $mobile-conatiner) {
+    .content-plus-member {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 30px 40px;
+    }
+
+    .plus-member-details-container {
+      text-align: center;
+      width: 50%;
+
+      h3 {
+        font-size: 20px;
+      }
+
+      h4 {
+        font-size: 18px;
+      }
+  
+      .learn-more-btn {
+        font-size: 16px;
+        max-width: 230px;
+      }
+
+    }
   }
 
 </style>

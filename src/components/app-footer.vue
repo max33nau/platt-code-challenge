@@ -34,6 +34,7 @@
   .footer {
     background-color: $dark-grey;
     color: $footer-txt;
+    padding-bottom: 30px;
 
     .footer-content {
       padding: 30px 15px;
@@ -92,6 +93,28 @@
 
       li:hover {
         opacity: .5;
+      }
+    }
+
+    @media screen and (min-width: $mobile-conatiner) {
+      .header {
+        font-size: 22px;
+      }
+
+      .sub-header {
+        font-size: 16px;
+      }
+
+      .live-help-btn {
+        max-width: 240px;
+        margin: 20px auto;
+        padding: 14px;
+        font-size: 16px;
+      }
+
+      .footer-options {
+        font-size: 16px;
+        margin-top: 10px;
       }
     }
 

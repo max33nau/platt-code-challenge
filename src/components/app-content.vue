@@ -6,7 +6,10 @@
     </div>
     <content-product-markets class="hide-on-mobile"> </content-product-markets>
     <content-plus-member class="content-box-shadow content-panel"> </content-plus-member>
-    <content-recently-viewed class="content-box-shadow content-panel"> </content-recently-viewed>
+    <div class="content-recent-container">
+      <img class="content-box-shadow content-panel todays-deal-img hide-on-mobile" src="../assets/img/todays-deal.png" alt="Todays Deal"/>
+      <content-recently-viewed class="content-box-shadow content-panel recent-viewed-container"> </content-recently-viewed>
+    </div>
     <content-info> </content-info>
     <content-apps class="content-box-shadow content-panel"> </content-apps>  
   </div>
@@ -41,6 +44,7 @@
   .app-content {
     background-color: $light-grey;
     padding: 0 7px;
+    height: 100%;
   }
 
   .todays-deal-img {
@@ -51,6 +55,21 @@
   @media screen and (min-width: $mobile-conatiner) {
     .app-content {
       padding: 0 15px;
+    }
+
+    .content-recent-container {
+      display: flex;
+      justify-content: space-between;
+
+      $width-content: 49%;
+
+      img {
+        width: $width-content;
+      }
+
+      .recent-viewed-container {
+        width: $width-content;
+      }
     }
   } 
 

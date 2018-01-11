@@ -107,11 +107,13 @@
 
     $padding-option-horizontal: 20px;
     $margin-option-horizontal: 10px;
+    background-color: white;
 
     .option-details-container {
       max-width: 90%;
       width: 100%;
       display: inline-block;
+      background-color: white;
     }
 
     .options-list {

@@ -19,6 +19,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../assets/scss/layout.scss';
 
   .content-info-item {
     display: inline-block;
@@ -40,5 +41,12 @@
       bottom: 10px;
     }
   }
+
+  @media screen and (min-width: $mobile-conatiner) {
+    .content-info-item {
+      width: 21%;
+      min-height: 180px;
+    }
+  } 
 
 </style>
