@@ -43,7 +43,7 @@
 
   .app-content {
     background-color: $light-grey;
-    padding: 0 7px;
+    padding: 0 7px 5px;
     height: 100%;
   }
 
@@ -54,7 +54,7 @@
 
   @media screen and (min-width: $mobile-conatiner) {
     .app-content {
-      padding: 0 15px;
+      padding: 0 15px 5px;
     }
 
     .content-recent-container {
@@ -72,6 +72,5 @@
       }
     }
   } 
-
 
 </style>

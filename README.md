@@ -2,6 +2,8 @@
 
 This is the first time I have ever used Vue.js and I am really starting to love the framework.
 
+Tested on latest versions of IE, Chrome and Firefox
+
 ## Notes
 
 1. I noticed the "Live Help" icon changes whether it is on mobile vs. tablet, not sure if that was inentional or not but I made it work.
