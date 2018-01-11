@@ -1,44 +1,53 @@
 <template>
-  <div class="content-info">
-    <div class="image-container">
-      <img
-        :src="src"
-      />
-    </div>
-    <div class="info-text">
-      {{text}}
-    </div>
+  <div class="content-desc-container">
+    <content-info-item class="content-box-shadow content-panel" 
+      v-for="(item, index) in info"
+      :key="index"
+      :src="item.src"
+      :text="item.text"
+    >
+    </content-info-item>
   </div>
 </template>
 
 <script>
+  import ContentInfoItem from './content-info-item'
+
+  import superInfo from '../assets/img/info/super-tool-day.png'
+  import locationInfo from '../assets/img/info/ic_location_b.png'
+  import helpInfo from '../assets/img/info/ic_helpcenter.png'
+  import universityInfo from '../assets/img/info/ic_platt-u.png'
+
   export default {
     name: 'content-info',
-    props: [ 'src', 'text' ]
+    data: function () {
+      return {
+        info: [
+          {
+            src: superInfo,
+            text: 'Super Tool Day & Dynamic Data Day'
+          },
+          {
+            src: locationInfo,
+            text: 'Branch Locations'
+          },
+          {
+            src: helpInfo,
+            text: 'Help Center'
+          },
+          {
+            src: universityInfo,
+            text: 'Platt University'
+          }
+        ]
+      }
+    },
+    components: {
+      'content-info-item': ContentInfoItem
+    }
   }
 </script>
 
 <style lang="scss" scoped>
-
-  .content-info {
-    display: inline-block;
-    width: 48%;
-    text-align: center;
-    padding: 20px 15px;
-    min-height: 175px;
-    position: relative;
-
-    .info-text {
-      font-weight: bold;
-      display: flex;
-      min-height: 45px;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 10px;
-    }
-  }
-
+  @import '../assets/scss/content.scss';
 </style>
