@@ -12,8 +12,8 @@ new webpack.optimize.CommonsChunkPlugin({
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    path: path.resolve(__dirname, './'),
+    publicPath: './',
     filename: 'bundle.js'
   },
   module: {
@@ -65,7 +65,7 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[path][name].[ext]?[hash]'
+          name: 'assets/[name].[hash].[ext]'
         }
       }
     ]
