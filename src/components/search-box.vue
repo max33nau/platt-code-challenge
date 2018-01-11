@@ -1,6 +1,6 @@
 <template>
   <div class="search-box-container">
-    <input class="search-base search-input" 
+    <input name="searchDogs" class="search-base search-input" 
       type="text" 
       placeholder="What are you looking for?" 
     />
@@ -14,16 +14,38 @@
 </template>
 
 <script>
-export default {
-  name: 'search-box',
-  data: function () {
-    return {}
+  import AutoComplete from 'js-autocomplete'
+  import request from 'superagent'
+
+  request
+    .get('https://dog.ceo/api/breeds/list')
+    .end((err, response) => {
+      if (err) return
+      var json = JSON.parse(response.text)
+      var dogs = json.message
+      /* eslint-disable no-new */
+      new AutoComplete(
+        {
+          selector: 'input[name="searchDogs"]',
+          minChars: 1,
+          source: function (value, suggest) {
+            var matches = dogs.filter((dog) => {
+              var subDogText = dog.substring(0, value.length)
+              return subDogText === value
+            })
+            suggest(matches)
+          }
+        }
+      )
+    })
+  export default {
+    name: 'search-box'
   }
-}
 </script>
 
 <style lang="scss" scoped>
   @import '../assets/scss/layout.scss';
+  @import '../assets/vendor/auto-complete.css';
 
   .search-box-container {
     padding: 20px 12px;
