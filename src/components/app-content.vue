@@ -11,7 +11,8 @@
         :src="item.src"
         :text="item.text"
       >
-      </content-info>  
+      </content-info>
+      <content-apps class="content-box-shadow content-panel"> </content-apps>  
     </div>
   </div>
 </template>
@@ -21,6 +22,7 @@
   import ContentPlusMember from './content-plus-member'
   import ContentRecentlyViewed from './content-recently-viewed'
   import ContentInfo from './content-info'
+  import ContentApps from './content-apps'
 
   import superInfo from '../assets/img/info/super-tool-day.png'
   import locationInfo from '../assets/img/info/ic_location_b.png'
@@ -55,7 +57,8 @@
       'content-product-options': ContentProductOptions,
       'content-plus-member': ContentPlusMember,
       'content-recently-viewed': ContentRecentlyViewed,
-      'content-info': ContentInfo
+      'content-info': ContentInfo,
+      'content-apps': ContentApps
     }
   }
 </script>
