@@ -109,11 +109,11 @@
     .options-list {
       list-style-type: none;
       margin: 0;
-      padding: 0 0 10px 0px;
+      padding: 0 0 13px 0px;
 
       .list-item {
         white-space: nowrap;
-        padding: 10px $padding-option-horizontal;
+        padding: 12px $padding-option-horizontal;
         font-size: 14px;
         border-top: 1px solid #ccc;
         margin: 0 $margin-option-horizontal;
@@ -123,7 +123,7 @@
     }
 
     .all-categories-item {
-      padding: 20px $padding-option-horizontal + $margin-option-horizontal;
+      padding: 25px $padding-option-horizontal + $margin-option-horizontal;
       font-size: 16px;
       white-space: nowrap;
       cursor: pointer;
