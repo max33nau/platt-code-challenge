@@ -33,11 +33,11 @@
   import AutoComplete from 'js-autocomplete'
   import request from 'superagent'
 
-  var dogBreeds
   var data = {
     showModal: false,
     dogImageSrc: '',
-    breed: ''
+    breed: '',
+    dogBreeds: []
   }
 
   request
@@ -45,16 +45,17 @@
     .end((err, response) => {
       if (err) return
       var json = JSON.parse(response.text)
-      dogBreeds = json.message
+      data.dogBreeds = json.message
       /* eslint-disable no-new */
       new AutoComplete(
         {
           selector: 'input[name="searchDogs"]',
           minChars: 1,
           source: function (value, suggest) {
-            var matches = dogBreeds.filter((dog) => {
-              var subDogText = dog.substring(0, value.length)
-              return subDogText === value
+            var subDogBreedVal = value.toLowerCase()
+            var matches = data.dogBreeds.filter((dog) => {
+              var subDogText = dog.substring(0, value.length).toLowerCase()
+              return subDogText === subDogBreedVal
             })
             suggest(matches)
           },
@@ -72,8 +73,8 @@
     },
     methods: {
       displayDogBreed: function () {
-        var dogBreed = this.breed
-        var matches = dogBreeds.filter((dog) => {
+        var dogBreed = this.breed.toLowerCase()
+        var matches = this.dogBreeds.filter((dog) => {
           return dogBreed === dog
         })
         var matchedDog
@@ -114,7 +115,7 @@
     }
 
     .search-input {
-      font-size: 14px;
+      font-size: 16px;
       padding: $search-box-padding;
       width: 90%;
       border: none;
