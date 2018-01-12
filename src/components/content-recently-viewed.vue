@@ -55,7 +55,15 @@
     }
 
     .recently-viewed-images {
+      display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;    /* OLD - Firefox 19- */
+      display: -ms-flexbox;  /*  IE 10 */
+      display: -webkit-flex; /* NEW - Chrome */
       display: flex;
+      -webkit-box-pack: space-between;
+      -moz-box-pack: space-between;
+      -ms-flex-pack: space-between;
+      -webkit-justify-content: space-between;
       justify-content: space-between;
       margin-bottom: 5px;
     }

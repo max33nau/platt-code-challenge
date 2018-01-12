@@ -45,7 +45,15 @@
 
   @media screen and (min-width: $mobile-conatiner) {
     .content-plus-member {
+      display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;    /* OLD - Firefox 19- */
+      display: -ms-flexbox;  /*  IE 10 */
+      display: -webkit-flex; /* NEW - Chrome */
       display: flex;
+      -webkit-box-pack: space-between;
+      -moz-box-pack: space-between;
+      -ms-flex-pack: space-between;
+      -webkit-justify-content: space-between;
       justify-content: space-between;
       padding: 30px 30px 40px;
     }

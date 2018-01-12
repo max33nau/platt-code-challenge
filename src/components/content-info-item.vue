@@ -31,9 +31,18 @@
 
     .info-text {
       font-weight: bold;
+      display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;    /* OLD - Firefox 19- */
+      display: -ms-flexbox;  /*  IE 10 */
+      display: -webkit-flex; /* NEW - Chrome */
       display: flex;
       min-height: 45px;
+      -webkit-align-items: center;
       align-items: center;
+      -webkit-box-pack: center;
+      -moz-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
       justify-content: center;
       position: absolute;
       left: 0;

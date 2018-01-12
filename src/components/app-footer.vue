@@ -84,8 +84,16 @@
 
     .footer-options {
       padding: 0;
+      display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;    /* OLD - Firefox 19- */
+      display: -ms-flexbox;  /*  IE 10 */
+      display: -webkit-flex; /* NEW - Chrome */
       display: flex;
       list-style: none;
+      -webkit-box-pack: space-around;
+      -moz-box-pack: space-around;
+      -ms-flex-pack: space-around;
+      -webkit-justify-content: space-around;
       justify-content: space-around;
       font-size: 14px;
       margin-bottom: 0;
