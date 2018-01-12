@@ -2,6 +2,9 @@
 
 This is the first time I have ever used Vue.js and I am really starting to love the framework.
 
+With the autocomplete for dogs api, if you choose a dog and press enter or click on the search icon a modal will pop up showing you a picture of the dog.
+I added that functionality to make it do a couple more things.
+
 Tested on latest versions of IE, Chrome and Firefox
 
 ## Notes

@@ -1,45 +1,98 @@
 <template>
-  <div class="search-box-container">
-    <input name="searchDogs" class="search-base search-input" 
-      type="text" 
-      placeholder="What are you looking for?" 
-    />
-    <div class="search-base search-icon-container"> 
-      <img 
-        src="../assets/img/icons/black/ic_search.png" 
-        alt=""
+  <div>
+    <div class="search-box-container">
+      <input name="searchDogs" class="search-base search-input" 
+        type="text" 
+        placeholder="What are you looking for?"
+        v-model="breed"
+        @keydown.enter="displayDogBreed" 
       />
+      <div class="search-base search-icon-container"
+        @click="displayDogBreed"
+      > 
+        <img 
+          src="../assets/img/icons/black/ic_search.png" 
+          alt=""
+        />
+      </div>
     </div>
+    <v-modal v-if="showModal" @close="showModal = false">
+      <img 
+        slot="image"
+        style="max-width: 100%;"
+        :src="dogImageSrc"
+      />
+      <h3 slot="header">Dog Breed - {{breed}} </h3>
+    </v-modal>
   </div>
 </template>
 
 <script>
+  import VModal from './v-modal'
+
   import AutoComplete from 'js-autocomplete'
   import request from 'superagent'
+
+  var dogBreeds
+  var data = {
+    showModal: false,
+    dogImageSrc: '',
+    breed: ''
+  }
 
   request
     .get('https://dog.ceo/api/breeds/list')
     .end((err, response) => {
       if (err) return
       var json = JSON.parse(response.text)
-      var dogs = json.message
+      dogBreeds = json.message
       /* eslint-disable no-new */
       new AutoComplete(
         {
           selector: 'input[name="searchDogs"]',
           minChars: 1,
           source: function (value, suggest) {
-            var matches = dogs.filter((dog) => {
+            var matches = dogBreeds.filter((dog) => {
               var subDogText = dog.substring(0, value.length)
               return subDogText === value
             })
             suggest(matches)
+          },
+          onSelect: function (e, dogBreed, item) {
+            data.breed = dogBreed
           }
         }
       )
     })
+
   export default {
-    name: 'search-box'
+    name: 'search-box',
+    data: function () {
+      return data
+    },
+    methods: {
+      displayDogBreed: function () {
+        var dogBreed = this.breed
+        var matches = dogBreeds.filter((dog) => {
+          return dogBreed === dog
+        })
+        var matchedDog
+        matchedDog = matches[0]
+        if (matchedDog) {
+          request
+            .get('https://dog.ceo/api/breed/' + matchedDog + '/images/random')
+            .end((err, response) => {
+              if (err) return
+              var json = JSON.parse(response.text)
+              data.dogImageSrc = decodeURIComponent(json.message)
+              data.showModal = true
+            })
+        }
+      }
+    },
+    components: {
+      'v-modal': VModal
+    }
   }
 </script>
 
@@ -92,6 +145,7 @@
       width: 10%;
       float: right;
       text-align: right;
+      cursor: pointer;
       border-top-right-radius: $border-radius;
       border-bottom-right-radius: $border-radius;
       padding-right: $search-box-padding; 
