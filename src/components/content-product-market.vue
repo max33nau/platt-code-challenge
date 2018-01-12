@@ -1,5 +1,5 @@
 <template>
-  <div class="content-product-item">
+  <div class="content-product-market">
     <div class="image-container">
       <img
         :src="src"
@@ -13,14 +13,14 @@
 
 <script>
   export default {
-    name: 'content-product-item',
+    name: 'content-product-market',
     props: [ 'src', 'text' ]
   }
 </script>
 
 <style lang="scss" scoped>
 
-  .content-product-item {
+  .content-product-market {
     display: inline-block;
     width: 15%;
     text-align: center;

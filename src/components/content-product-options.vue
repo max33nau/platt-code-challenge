@@ -71,10 +71,9 @@
       height: $icon-container-circle;
       margin: 0 auto;
       border: 1px solid #ccc;
-      display: flex;
-      justify-content: center;
+      display: inline-block;
+      text-align: center;
       outline: none;
-      align-items: center;
       -webkit-box-shadow: $border-shadow;
       -moz-box-shadow: $border-shadow;
       box-shadow: $border-shadow;
@@ -86,8 +85,8 @@
     }
 
     .product-text {
-      display: inline-block;
-      margin-top: 7px;
+      display: block;
+      margin-top: 6px;
       font-size: 14px;
     }
   }

@@ -121,6 +121,8 @@
       outline: none;
       border-top-left-radius: $border-radius;
       border-bottom-left-radius: $border-radius;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
 
       $place-holder-color: #a5a4ac;
 

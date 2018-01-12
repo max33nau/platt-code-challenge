@@ -2,19 +2,19 @@
   <div class="content-product-markets">
     <h3 class="text-center header"> Product Markets </h3>
     <div class="content-desc-container">
-      <content-product-item class="content-box-shadow content-panel" 
+      <content-product-market class="content-box-shadow content-panel" 
         v-for="(item, index) in info"
         :key="index"
         :src="item.src"
         :text="item.text"
       >
-      </content-product-item>
+      </content-product-market>
     </div>
   </div>
 </template>
 
 <script>
-  import ContentProductItem from './content-product-item.vue'
+  import ContentProductMarket from './content-product-market.vue'
 
   import dataCommImg from '../assets/img/product-markets/datacomm.png'
   import hvacImg from '../assets/img/product-markets/hvac.png'
@@ -56,7 +56,7 @@
       }
     },
     components: {
-      'content-product-item': ContentProductItem
+      'content-product-market': ContentProductMarket
     }
   }
 </script>
