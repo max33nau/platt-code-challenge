@@ -82,6 +82,7 @@
 
   .modal-default-button {
     max-width: 200px;
+    background-color: #DEDEDE;
   }
 
   .modal-enter {

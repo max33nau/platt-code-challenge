@@ -17,6 +17,8 @@ of this project it was the best thing to use, and bootsrap 4 uses flexbox now so
 4. The autocomplete uses two npm modules that allow me to make my Ajax request to get all dog breeds and then I am able to filter them
 out based on the user input. Again given the time constraint, I would probably clean up that search box filtering more if I was going to continue with this project.
 5. I really enjoyed completing this challenge and learned a lot along the way. It was really a lot of fun.
+6. I found out there was some issues with flex box on iOS devices so I added webkits to all flex box attributes, given more time. I would probably move these to a scss
+file and import these into each place flex box is used but I just left it as is for now.
 
 ## Build Setup
 
